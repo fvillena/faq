@@ -6,7 +6,7 @@ header('Content-Type: text/html, charset=utf-8');
 <html lang="es" dir="ltr">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title></title>
+    <title>Inicio</title>
   </head>
   <body>
     <?php include ("header.php"); ?>
