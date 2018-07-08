@@ -1,7 +1,7 @@
 <?php
 header('Content-Type: text/html; charset=utf-8');
 include ("model.php");
-include ("credentials.php")
+include ("credentials.php");
 
 $connection = connectMySQL($server,$user,$password,$db);
 
