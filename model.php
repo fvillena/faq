@@ -15,4 +15,8 @@ function searchEntries($connection,$searchQuery) {
 	$result = $connection->query($query);
 	return $result;
 }
+function addEntry($procedimientoExamen,$servicio,$ubicacion,$tomaHora,$observaciones,$connection) {
+  $query = "INSERT INTO procedimientos (id, procedimientoExamen, servicio, ubicacion, tomaHora, observaciones) VALUES (NULL, '".$procedimientoExamen."', '".$servicio."', '".$ubicacion."', '".$tomaHora."', '".$observaciones."');";
+	$result = $connection->query($query);
+}
  ?>

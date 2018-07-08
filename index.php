@@ -10,7 +10,8 @@ header('Content-Type: text/html, charset=utf-8');
   </head>
   <body>
     <?php include ("header.php"); ?>
-    <table border="1">
+    <h1>Bienvenido</h1>
+    <!-- <table border="1">
       <thead>
         <th>Procemimiento / Examen</th>
         <th>Servicio</th>
@@ -19,29 +20,30 @@ header('Content-Type: text/html, charset=utf-8');
         <th>observaciones</th>
       </thead>
     <?php
-    $data = listAll($connection);
-    foreach ($data as $key) {
-      echo '
-      <tr>
-        <td>
-          '.$key["procedimientoExamen"].'
-        </td>
-        <td>
-          '.$key["servicio"].'
-        </td>
-        <td>
-          '.$key["ubicacion"].'
-        </td>
-        <td>
-          '.$key["tomaHora"].'
-        </td>
-        <td>
-          '.$key["observaciones"].'
-        </td>
-      </tr>
-      ';
-    }
+    // $data = listAll($connection);
+    // foreach ($data as $key) {
+    //   echo '
+    //   <tr>
+    //     <td>
+    //       '.$key["procedimientoExamen"].'
+    //     </td>
+    //     <td>
+    //       '.$key["servicio"].'
+    //     </td>
+    //     <td>
+    //       '.$key["ubicacion"].'
+    //     </td>
+    //     <td>
+    //       '.$key["tomaHora"].'
+    //     </td>
+    //     <td>
+    //       '.$key["observaciones"].'
+    //     </td>
+    //   </tr>
+    //   ';
+    // }
     ?>
-  </table>
+  </table> -->
+  <?php include ("footer.php"); ?>
   </body>
 </html>

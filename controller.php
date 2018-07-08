@@ -31,5 +31,10 @@ function searchResults($connection,$searchQuery) {
   }
 }
 
+if (isset($_GET["action"])) {
+  if ($_GET["action"] == "addEntry") {
+    addEntry($_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection);
+  }
+}
 
  ?>
