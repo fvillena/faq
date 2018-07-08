@@ -18,12 +18,17 @@ function listAll($connection) {
 
 function searchResults($connection,$searchQuery) {
   $searchResult = searchEntries($connection,$searchQuery);
-  while ($row = $searchResult->fetch_assoc())
-  {
-      $data[] = $row;
+  if ($searchResult->num_rows > 0) {
+    while ($row = $searchResult->fetch_assoc())
+    {
+        $data[] = $row;
 
+    }
+    return $data;
   }
-  return $data;
+  else {
+    return false;
+  }
 }
 
 

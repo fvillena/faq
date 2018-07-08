@@ -15,37 +15,51 @@ header('Content-Type: text/html, charset=utf-8');
       <input type="submit" name="" value="Buscar">
     </form>
     <table border="1">
-      <thead>
-        <th>Procemimiento / Examen</th>
-        <th>Servicio</th>
-        <th>Ubicación</th>
-        <th>Toma de Hora</th>
-        <th>observaciones</th>
-      </thead>
-    <?php
-    $data = searchResults($connection,$_GET["q"]);
-    foreach ($data as $key) {
-      echo '
-      <tr>
-        <td>
-          '.$key["procedimientoExamen"].'
-        </td>
-        <td>
-          '.$key["servicio"].'
-        </td>
-        <td>
-          '.$key["ubicacion"].'
-        </td>
-        <td>
-          '.$key["tomaHora"].'
-        </td>
-        <td>
-          '.$key["observaciones"].'
-        </td>
-      </tr>
-      ';
-    }
-    ?>
-  </table>
+      <?php if (isset ($_GET["q"])) {
+        $data = searchResults($connection,$_GET["q"]);
+        if ($data == false) {
+          echo "no hay resultados";
+        }
+        else {
+          echo '
+          <thead>
+            <th>Procemimiento / Examen</th>
+            <th>Servicio</th>
+            <th>Ubicación</th>
+            <th>Toma de Hora</th>
+            <th>observaciones</th>
+          </thead>';
+          foreach ($data as $key) {
+            echo '
+            <tr>
+              <td>
+                '.$key["procedimientoExamen"].'
+              </td>
+              <td>
+                '.$key["servicio"].'
+              </td>
+              <td>
+                '.$key["ubicacion"].'
+              </td>
+              <td>
+                '.$key["tomaHora"].'
+              </td>
+              <td>
+                '.$key["observaciones"].'
+              </td>
+            </tr>
+            ';
+          }
+          echo '
+          </table>';
+        }
+
+      }
+      else {
+        echo 'ingrese búsqueda';
+      }
+      ?>
+
+
   </body>
 </html>
