@@ -37,4 +37,8 @@ function listComments($id,$connection) {
 	$result = $connection->query($query);
 	return $result;
 }
+function addUser ($user,$name,$password,$type,$connection) {
+  $query = "INSERT INTO users (id, user, name, password, type) VALUES (NULL, '".$user."', '".$name."', '".$password."', '".$type."');";
+	$result = $connection->query($query);
+}
  ?>

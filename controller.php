@@ -31,13 +31,14 @@ function searchResults($connection,$searchQuery) {
   }
 }
 
-if (isset($_GET["action"])) {
-  if ($_GET["action"] == "addEntry") {
+if (isset($_GET["action"]) || isset($_POST["action"])) {
+  if (isset($_GET["action"]) && ($_GET["action"] == "addEntry")) {
     addEntry($_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection);
   }
-
-
-  if ($_GET["action"] == "editEntry") {
+  if (isset($_POST["action"]) && $_POST["action"] == "addUser") {
+    addUser($_POST["user"],$_POST["name"],crypt($_POST["password"],"hcuch"),$_POST["type"],$connection);
+  }
+  if (isset($_GET["action"]) && $_GET["action"] == "editEntry") {
     if (isset ($_GET["procedimientoExamen"])) {
       editEntry($_GET["id"],$_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection);
     }
@@ -49,7 +50,7 @@ if (isset($_GET["action"])) {
   if (isset($_GET["addComment"])) {
     addComment($_GET["id"],$_GET["addComment"],$connection);
   }
-  if ($_GET["action"] == "viewEntry") {
+  if (isset($_GET["action"]) && ($_GET["action"] == "viewEntry")) {
     $result = viewEntry($_GET["id"],$connection);
     $entry = $result->fetch_assoc();
     $commentsResult = listComments($_GET["id"],$connection);
@@ -63,6 +64,11 @@ if (isset($_GET["action"])) {
     else {
       $comments = false;
     }
+  }
+  if (isset($_GET["action"]) && $_GET["action"] == "logout") {
+    session_start();
+    session_unset();
+    session_destroy();
   }
 }
 

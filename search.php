@@ -15,7 +15,7 @@ header('Content-Type: text/html, charset=utf-8');
       <input type="submit" name="" value="Buscar">
     </form>
     <table border="1">
-      <?php if (isset ($_GET["q"]) && ($_GET["q"] != "")) {
+      <?php if (isset ($_GET["q"])) {
         $data = searchResults($connection,$_GET["q"]);
         if ($data == false) {
           echo "no hay resultados";
