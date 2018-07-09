@@ -11,7 +11,7 @@ header('Content-Type: text/html, charset=utf-8');
   <body>
     <?php include ("header.php"); ?>
     <form class="" action="search.php" method="GET">
-      <input type="text" name="q" value="">
+      <input type="text" name="q" value='<?php if (isset($_GET["q"])) {echo $_GET["q"];} ?>'>
       <input type="submit" name="" value="Buscar">
     </form>
     <table border="1">
@@ -20,7 +20,9 @@ header('Content-Type: text/html, charset=utf-8');
         if ($data == false) {
           echo "no hay resultados";
         }
-        else {
+        else if (count($data) == 1) {
+          header('Location: view.php?action=viewEntry&id='. $data[0]["id"]);
+        } else {
           echo '
           <thead>
             <th>Procemimiento / Examen</th>
@@ -33,7 +35,7 @@ header('Content-Type: text/html, charset=utf-8');
             echo '
             <tr>
               <td>
-                '.$key["procedimientoExamen"].'
+                <a href="view.php?action=viewEntry&id='.$key["id"].'">'.$key["procedimientoExamen"].'</a>
               </td>
               <td>
                 '.$key["servicio"].'

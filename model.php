@@ -19,4 +19,13 @@ function addEntry($procedimientoExamen,$servicio,$ubicacion,$tomaHora,$observaci
   $query = "INSERT INTO procedimientos (id, procedimientoExamen, servicio, ubicacion, tomaHora, observaciones) VALUES (NULL, '".$procedimientoExamen."', '".$servicio."', '".$ubicacion."', '".$tomaHora."', '".$observaciones."');";
 	$result = $connection->query($query);
 }
+function viewEntry ($id,$connection) {
+  $query = "SELECT * FROM procedimientos WHERE id = " . $id;
+	$result = $connection->query($query);
+	return $result;
+}
+function editEntry($id,$procedimientoExamen,$servicio,$ubicacion,$tomaHora,$observaciones,$connection) {
+  $query = 'UPDATE procedimientos SET procedimientoExamen = "'.$procedimientoExamen.'", servicio = "'.$servicio.'", ubicacion = "'.$ubicacion.'", tomaHora = "'.$tomaHora.'", observaciones = "'.$observaciones.'" WHERE id = '.$id.'';
+	$result = $connection->query($query);
+}
  ?>

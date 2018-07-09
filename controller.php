@@ -35,6 +35,19 @@ if (isset($_GET["action"])) {
   if ($_GET["action"] == "addEntry") {
     addEntry($_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection);
   }
+  if ($_GET["action"] == "viewEntry") {
+    $result = viewEntry($_GET["id"],$connection);
+    $entry = $result->fetch_assoc();
+  }
+  if ($_GET["action"] == "editEntry") {
+    if (isset ($_GET["id"])) {
+      editEntry($_GET["id"],$_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection);
+    }
+    if (isset ($_GET["id2"])) {
+      $result = viewEntry($_GET["id2"],$connection);
+      $entry = $result->fetch_assoc();
+    }
+  }
 }
 
  ?>
