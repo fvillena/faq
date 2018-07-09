@@ -18,7 +18,6 @@
       <label for="">observaciones: </label> <input type="text" name="observaciones" value="<?php echo $entry["observaciones"]; ?>"><br>
       <input type="hidden" name="modified" value="true">
       <input type="hidden" name="id" value="<?php echo $entry["id"]; ?>">
-      <input type="hidden" name="id2" value="<?php echo $entry["id"]; ?>">
       <input type="hidden" name="action" value="editEntry">
       <input type="submit" name="" value="Modificar">
     </form>
