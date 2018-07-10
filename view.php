@@ -27,14 +27,18 @@
     }
     ?>
     </ul>
-    <h3>Agregar Comentario</h3>
-    <form class="" action="view.php" method="get">
-      <input type="text" name="addComment" value="">
-      <input type="hidden" name="action" value="viewEntry">
-      <input type="hidden" name="id" value="<?php echo $_GET["id"]; ?>">
-      <input type="submit" name="" value="Comentar">
-    </form>
-    <p><a href="edit.php?action=editEntry&id=<?php echo $entry["id"]; ?>">Editar</a></p>
+    <?php if (isset($_SESSION["user"])) {echo '
+      <h3>Agregar Comentario</h3>
+      <form class="" action="view.php" method="get">
+        <input type="text" name="addComment" value="">
+        <input type="hidden" name="action" value="viewEntry">
+        <input type="hidden" name="id" value="'.$_GET["id"].'">
+        <input type="hidden" name="user_id" value="'.$_SESSION["user_id"].'">
+        <input type="submit" name="" value="Comentar">
+      </form>
+      <p><a href="edit.php?action=editEntry&id='.$entry["id"].'">Editar</a></p>
+      ';} ?>
+
     <?php include ("footer.php"); ?>
   </body>
 </html>

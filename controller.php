@@ -48,7 +48,7 @@ if (isset($_GET["action"]) || isset($_POST["action"])) {
     }
   }
   if (isset($_GET["addComment"])) {
-    addComment($_GET["id"],$_GET["addComment"],$connection);
+    addComment($_GET["id"],$_GET["addComment"],$connection,$_GET["user_id"]);
   }
   if (isset($_GET["action"]) && ($_GET["action"] == "viewEntry")) {
     $result = viewEntry($_GET["id"],$connection);

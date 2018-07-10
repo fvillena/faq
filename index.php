@@ -10,7 +10,7 @@ header('Content-Type: text/html, charset=utf-8');
   </head>
   <body>
     <?php include ("header.php"); ?>
-    <h1>Bienvenido</h1>
+    <h1>Bienvenido <?php if (isset($_SESSION["user"])) {echo $_SESSION["user_name"];} ?></h1>
     <!-- <table border="1">
       <thead>
         <th>Procemimiento / Examen</th>

@@ -28,11 +28,17 @@
         // Obtenemos la clave.
         $fila = mysqli_fetch_assoc($resultado);
         $password_bd = $fila['password'];
+        $user_id = $fila['id'];
+        $user_name = $fila['name'];
+        $user_type = $fila['type'];
 
         // Marcamos la variable que indica el inicio de sesión.
         $login = $password_bd == $password;
         if ($login) {
             $_SESSION['user'] = $user;
+            $_SESSION['user_id'] = $user_id;
+            $_SESSION['user_name'] = $user_name;
+            $_SESSION['user_type'] = $user_type;
         }
         else {
           echo 'incorrecto';

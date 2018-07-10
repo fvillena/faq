@@ -28,8 +28,8 @@ function editEntry($id,$procedimientoExamen,$servicio,$ubicacion,$tomaHora,$obse
   $query = 'UPDATE procedimientos SET procedimientoExamen = "'.$procedimientoExamen.'", servicio = "'.$servicio.'", ubicacion = "'.$ubicacion.'", tomaHora = "'.$tomaHora.'", observaciones = "'.$observaciones.'" WHERE id = '.$id.'';
 	$result = $connection->query($query);
 }
-function addComment($proc_id,$comment,$connection) {
-  $query = "INSERT INTO comments (id, proc_id, comment, user_id, datetime) VALUES (NULL, '".$proc_id."', '".$comment."','', CURRENT_TIMESTAMP);";
+function addComment($proc_id,$comment,$connection,$user_id) {
+  $query = "INSERT INTO comments (id, proc_id, comment, user_id, datetime) VALUES (NULL, '".$proc_id."', '".$comment."','".$user_id."', CURRENT_TIMESTAMP);";
 	$result = $connection->query($query);
 }
 function listComments($id,$connection) {
