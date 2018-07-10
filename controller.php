@@ -33,14 +33,14 @@ function searchResults($connection,$searchQuery) {
 
 if (isset($_GET["action"]) || isset($_POST["action"])) {
   if (isset($_GET["action"]) && ($_GET["action"] == "addEntry")) {
-    addEntry($_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection);
+    addEntry($_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection,$_GET["state"]);
   }
   if (isset($_POST["action"]) && $_POST["action"] == "addUser") {
     addUser($_POST["user"],$_POST["name"],crypt($_POST["password"],"hcuch"),$_POST["type"],$connection);
   }
   if (isset($_GET["action"]) && $_GET["action"] == "editEntry") {
     if (isset ($_GET["procedimientoExamen"])) {
-      editEntry($_GET["id"],$_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection);
+      editEntry($_GET["id"],$_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection,$_GET["state"]);
     }
     if (isset ($_GET["id"])) {
       $result = viewEntry($_GET["id"],$connection);

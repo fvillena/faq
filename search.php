@@ -30,6 +30,7 @@ header('Content-Type: text/html, charset=utf-8');
             <th>Ubicación</th>
             <th>Toma de Hora</th>
             <th>observaciones</th>
+            <th>Estado</th>
           </thead>';
           foreach ($data as $key) {
             echo '
@@ -48,6 +49,9 @@ header('Content-Type: text/html, charset=utf-8');
               </td>
               <td>
                 '.$key["observaciones"].'
+              </td>
+              <td>
+                '.$key["state"].'
               </td>
             </tr>
             ';

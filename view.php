@@ -16,6 +16,8 @@
     <?php echo $entry["tomaHora"]; ?>
     <h2>Observaciones</h2>
     <?php echo $entry["observaciones"]; ?>
+    <h2>Estado</h2>
+    <?php echo $entry["state"]; ?>
     <h2>Comentarios</h2>
     <ul>
     <?php if ($comments == false) {

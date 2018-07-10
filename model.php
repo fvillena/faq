@@ -11,21 +11,21 @@ function selectEntries($connection) {
 	return $result;
 }
 function searchEntries($connection,$searchQuery) {
-  $query = "SELECT * FROM procedimientos WHERE procedimientoExamen LIKE '%".$searchQuery."%'";
+  $query = "SELECT procedimientos.id,procedimientos.procedimientoExamen,procedimientos.servicio,procedimientos.ubicacion,procedimientos.tomaHora,procedimientos.observaciones,states.state FROM procedimientos,states WHERE procedimientoExamen LIKE '%".$searchQuery."%' AND procedimientos.state = states.id";
 	$result = $connection->query($query);
 	return $result;
 }
-function addEntry($procedimientoExamen,$servicio,$ubicacion,$tomaHora,$observaciones,$connection) {
-  $query = "INSERT INTO procedimientos (id, procedimientoExamen, servicio, ubicacion, tomaHora, observaciones) VALUES (NULL, '".$procedimientoExamen."', '".$servicio."', '".$ubicacion."', '".$tomaHora."', '".$observaciones."');";
+function addEntry($procedimientoExamen,$servicio,$ubicacion,$tomaHora,$observaciones,$connection,$state) {
+  $query = "INSERT INTO procedimientos (id, procedimientoExamen, servicio, ubicacion, tomaHora, observaciones,state) VALUES (NULL, '".$procedimientoExamen."', '".$servicio."', '".$ubicacion."', '".$tomaHora."', '".$observaciones."', '".$state."');";
 	$result = $connection->query($query);
 }
 function viewEntry ($id,$connection) {
-  $query = "SELECT * FROM procedimientos WHERE id = " . $id;
+  $query = "SELECT procedimientos.id,procedimientos.procedimientoExamen,procedimientos.servicio,procedimientos.ubicacion,procedimientos.tomaHora,procedimientos.observaciones,states.state FROM procedimientos,states WHERE procedimientos.state = states.id AND procedimientos.id = " . $id;
 	$result = $connection->query($query);
 	return $result;
 }
-function editEntry($id,$procedimientoExamen,$servicio,$ubicacion,$tomaHora,$observaciones,$connection) {
-  $query = 'UPDATE procedimientos SET procedimientoExamen = "'.$procedimientoExamen.'", servicio = "'.$servicio.'", ubicacion = "'.$ubicacion.'", tomaHora = "'.$tomaHora.'", observaciones = "'.$observaciones.'" WHERE id = '.$id.'';
+function editEntry($id,$procedimientoExamen,$servicio,$ubicacion,$tomaHora,$observaciones,$connection,$state) {
+  $query = 'UPDATE procedimientos SET procedimientoExamen = "'.$procedimientoExamen.'", servicio = "'.$servicio.'", ubicacion = "'.$ubicacion.'", tomaHora = "'.$tomaHora.'", observaciones = "'.$observaciones.'", state = '.$state.' WHERE id = '.$id.'';
 	$result = $connection->query($query);
 }
 function addComment($proc_id,$comment,$connection,$user_id) {

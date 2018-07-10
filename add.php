@@ -17,6 +17,7 @@
       <label for="">Ubicación: </label> <input type="text" name="ubicacion" value=""><br>
       <label for="">Toma de Hora: </label> <input type="text" name="tomaHora" value=""><br>
       <label for="">observaciones: </label> <input type="text" name="observaciones" value=""><br>
+      <label for="">Estado: </label> <input type="text" name="state" value=""><br>
       <input type="hidden" name="added" value="true">
       <input type="hidden" name="action" value="addEntry">
       <input type="submit" name="" value="Agregar">
