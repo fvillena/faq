@@ -17,7 +17,13 @@
       <label for="">Ubicación: </label> <input type="text" name="ubicacion" value=""><br>
       <label for="">Toma de Hora: </label> <input type="text" name="tomaHora" value=""><br>
       <label for="">observaciones: </label> <input type="text" name="observaciones" value=""><br>
-      <label for="">Estado: </label> <input type="text" name="state" value=""><br>
+      <label for="">Estado: </label>
+      <select class="" name="state">
+        <option value="1">Correcto</option>
+        <option value="2">No Confirmado</option>
+        <option value="3">No se Realiza en el Hospital</option>
+        <option value="4">No se Realiza para Todos los Diagnósticos</option>
+      </select><br>
       <input type="hidden" name="added" value="true">
       <input type="hidden" name="action" value="addEntry">
       <input type="submit" name="" value="Agregar">

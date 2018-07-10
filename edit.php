@@ -17,7 +17,13 @@
       <label for="">Ubicación: </label> <input type="text" name="ubicacion" value="<?php echo $entry["ubicacion"]; ?>"><br>
       <label for="">Toma de Hora: </label> <input type="text" name="tomaHora" value="<?php echo $entry["tomaHora"]; ?>"><br>
       <label for="">observaciones: </label> <input type="text" name="observaciones" value="<?php echo $entry["observaciones"]; ?>"><br>
-      <label for="">Estado: </label> <input type="text" name="state" value="<?php echo $entry["state"]; ?>"><br>
+      <label for="">Estado: </label>
+      <select class="" name="state">
+        <option value="1">Correcto</option>
+        <option value="2">No Confirmado</option>
+        <option value="3">No se Realiza en el Hospital</option>
+        <option value="4">No se Realiza para Todos los Diagnósticos</option>
+      </select><br>
       <input type="hidden" name="modified" value="true">
       <input type="hidden" name="id" value="<?php echo $entry["id"]; ?>">
       <input type="hidden" name="action" value="editEntry">
