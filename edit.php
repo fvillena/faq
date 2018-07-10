@@ -7,6 +7,7 @@
   </head>
   <body>
     <?php include ("header.php"); ?>
+    <?php if (!isset($_SESSION['user']) || ($_SESSION['user_type'] != 1)) {header('Location: index.php');} ?>
     <?php if (isset ($_GET["modified"]) && $_GET["modified"] == "true") {
       echo "Entrada Modificada Correctamente";
     } ?>

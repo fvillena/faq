@@ -6,8 +6,8 @@
     <title></title>
   </head>
   <body>
-    <?php if (!isset($_SESSION["user"])) {header('Location: index.php');} ?>
     <?php include ("header.php"); ?>
+    <?php if (!isset($_SESSION['user']) || ($_SESSION['user_type'] != 1)) {header('Location: index.php');} ?>
     <?php if (isset ($_GET["added"]) && $_GET["added"] == "true") {
       echo "Entrada Agegada Correctamente";
     } ?>

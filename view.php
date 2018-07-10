@@ -22,7 +22,7 @@
       echo 'sin comentarios';
     } else {
       foreach ($comments as $comment) {
-        echo '<li>'.$comment["datetime"].': '.$comment["comment"].'</li>';
+        echo '<li><abbr title="'.$comment["datetime"].'"><b>'.$comment["name"].'</b></abbr>: '.$comment["comment"].'</li>';
       }
     }
     ?>
