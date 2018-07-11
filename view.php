@@ -38,9 +38,8 @@
         <input type="hidden" name="user_id" value="'.$_SESSION["user_id"].'">
         <input type="submit" name="" value="Comentar">
       </form>
-      <p><a href="edit.php?action=editEntry&id='.$entry["id"].'">Editar</a></p>
       ';} ?>
-
+      <?php if (isset($_SESSION['user']) && ($_SESSION['user_type'] == 1)) {echo '<p><a href="edit.php?action=editEntry&id='.$entry["id"].'">Editar</a></p>';} ?>
     <?php include ("footer.php"); ?>
   </body>
 </html>
