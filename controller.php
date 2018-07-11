@@ -70,6 +70,9 @@ if (isset($_GET["action"]) || isset($_POST["action"])) {
     session_unset();
     session_destroy();
   }
+  if (isset($_GET["action"]) && $_GET["action"] == "changePassword") {
+    changePassword ($_GET["id"],crypt($_GET["newPassword"],"hcuch"),$connection);
+  }
 }
 
  ?>

@@ -41,4 +41,8 @@ function addUser ($user,$name,$password,$type,$connection) {
   $query = "INSERT INTO users (id, user, name, password, type) VALUES (NULL, '".$user."', '".$name."', '".$password."', '".$type."');";
 	$result = $connection->query($query);
 }
+function changePassword ($id,$newPassword,$connection) {
+	$query = "UPDATE users SET password = '".$newPassword."' WHERE id=".$id;
+	$result = $connection->query($query);
+}
  ?>
