@@ -31,6 +31,20 @@ function searchResults($connection,$searchQuery) {
   }
 }
 
+function commentsToArray() {
+  global $connection;
+  global $comments;
+  $commentsResult = listAllComments($connection);
+  if ($commentsResult->num_rows > 0) {
+    while ($row = $commentsResult->fetch_assoc())
+    {
+        $comments[] = $row;
+
+    }
+    return $comments;
+  }
+}
+
 if (isset($_GET["action"]) || isset($_POST["action"])) {
   if (isset($_GET["action"]) && ($_GET["action"] == "addEntry")) {
     addEntry($_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection,$_GET["state"]);
@@ -72,6 +86,9 @@ if (isset($_GET["action"]) || isset($_POST["action"])) {
   }
   if (isset($_GET["action"]) && $_GET["action"] == "changePassword") {
     changePassword ($_GET["id"],crypt($_GET["newPassword"],"hcuch"),$connection);
+  }
+  if (isset($_GET["action"]) && $_GET["action"] == "deleteComment") {
+    deleteComment($_GET["id"],$connection);
   }
 }
 

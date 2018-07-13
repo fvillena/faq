@@ -45,4 +45,13 @@ function changePassword ($id,$newPassword,$connection) {
 	$query = "UPDATE users SET password = '".$newPassword."' WHERE id=".$id;
 	$result = $connection->query($query);
 }
+function listAllComments ($connection) {
+	$query = "SELECT comments.id,comments.proc_id,procedimientos.procedimientoExamen,comments.comment,comments.datetime,users.name as name FROM comments,users, procedimientos WHERE comments.user_id = users.id AND procedimientos.id = comments.proc_id ORDER BY `comments`.`datetime` DESC";
+	$result = $connection->query($query);
+	return $result;
+}
+function deleteComment($id,$connection) {
+	$query = "DELETE FROM `comments` WHERE `comments`.`id` = ".$id."";
+	$result = $connection->query($query);
+}
  ?>
