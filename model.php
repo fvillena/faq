@@ -33,7 +33,7 @@ function addComment($proc_id,$comment,$connection,$user_id) {
 	$result = $connection->query($query);
 }
 function listComments($id,$connection) {
-  $query = "SELECT comments.id,comments.proc_id,comments.comment,comments.datetime,users.name as name FROM comments,users WHERE comments.user_id = users.id AND proc_id=".$id." ORDER BY `comments`.`datetime` DESC";
+  $query = "SELECT comments.id,comments.user_id,comments.proc_id,comments.comment,comments.datetime,users.name as name FROM comments,users WHERE comments.user_id = users.id AND proc_id=".$id." ORDER BY `comments`.`datetime` DESC";
 	$result = $connection->query($query);
 	return $result;
 }

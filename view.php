@@ -25,7 +25,7 @@
       echo 'sin comentarios';
     } else {
       foreach ($comments as $comment) {
-        echo '<li><abbr title="'.$comment["datetime"].'"><b>'.$comment["name"].'</b></abbr>: '.$comment["comment"].'</li>';
+        echo '<li><abbr title="'.$comment["datetime"].'"><b>'.$comment["name"].'</b></abbr>: '.$comment["comment"].' '; if (isset($_SESSION["user_id"]) && ($comment["user_id"] == $_SESSION["user_id"])) {echo '  | <a href="view.php?action=viewEntry&id='.$_GET["id"].'&action2=deleteComment&comment_id='.$comment["id"].'">Eliminar</a>';} echo '</li>';
       }
     }
     ?>

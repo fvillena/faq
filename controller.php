@@ -45,7 +45,7 @@ function commentsToArray() {
   }
 }
 
-if (isset($_GET["action"]) || isset($_POST["action"])) {
+if (isset($_GET["action"]) || isset($_GET["action2"]) || isset($_POST["action"])) {
   if (isset($_GET["action"]) && ($_GET["action"] == "addEntry")) {
     addEntry($_GET["procedimientoExamen"],$_GET["servicio"],$_GET["ubicacion"],$_GET["tomaHora"],$_GET["observaciones"],$connection,$_GET["state"]);
   }
@@ -63,6 +63,9 @@ if (isset($_GET["action"]) || isset($_POST["action"])) {
   }
   if (isset($_GET["addComment"])) {
     addComment($_GET["id"],$_GET["addComment"],$connection,$_GET["user_id"]);
+  }
+  if (isset($_GET["action2"]) && $_GET["action2"] == "deleteComment") {
+    deleteComment($_GET["comment_id"],$connection);
   }
   if (isset($_GET["action"]) && ($_GET["action"] == "viewEntry")) {
     $result = viewEntry($_GET["id"],$connection);
@@ -86,9 +89,6 @@ if (isset($_GET["action"]) || isset($_POST["action"])) {
   }
   if (isset($_GET["action"]) && $_GET["action"] == "changePassword") {
     changePassword ($_GET["id"],crypt($_GET["newPassword"],"hcuch"),$connection);
-  }
-  if (isset($_GET["action"]) && $_GET["action"] == "deleteComment") {
-    deleteComment($_GET["id"],$connection);
   }
   if (isset($_GET["action"]) && $_GET["action"] == "deleteEntry") {
     deleteEntry($_GET["id"],$connection);

@@ -16,7 +16,7 @@
       echo 'sin comentarios';
     } else {
       foreach ($comments as $comment) {
-        echo '<li><abbr title="'.$comment["datetime"].'"><b>'.$comment["name"].'</b></abbr>: '.$comment["comment"].' en <a href="view.php?action=viewEntry&id='.$comment["proc_id"].'">'.$comment["procedimientoExamen"].'</a> | <a href="admin.php?action=deleteComment&id='.$comment["id"].'">Eliminar</a></li>';
+        echo '<li><abbr title="'.$comment["datetime"].'"><b>'.$comment["name"].'</b></abbr>: '.$comment["comment"].' en <a href="view.php?action=viewEntry&id='.$comment["proc_id"].'">'.$comment["procedimientoExamen"].'</a> | <a href="admin.php?action2=deleteComment&comment_id='.$comment["id"].'">Eliminar</a></li>';
       }
     }
     ?>
