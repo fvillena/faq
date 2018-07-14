@@ -54,4 +54,8 @@ function deleteComment($id,$connection) {
 	$query = "DELETE FROM `comments` WHERE `comments`.`id` = ".$id."";
 	$result = $connection->query($query);
 }
+function deleteEntry ($id,$connection) {
+	$query = "DELETE FROM `procedimientos` WHERE `id` = ".$id."";
+	$result = $connection->query($query);
+}
  ?>

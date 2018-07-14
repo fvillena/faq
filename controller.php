@@ -90,6 +90,9 @@ if (isset($_GET["action"]) || isset($_POST["action"])) {
   if (isset($_GET["action"]) && $_GET["action"] == "deleteComment") {
     deleteComment($_GET["id"],$connection);
   }
+  if (isset($_GET["action"]) && $_GET["action"] == "deleteEntry") {
+    deleteEntry($_GET["id"],$connection);
+  }
 }
 
  ?>

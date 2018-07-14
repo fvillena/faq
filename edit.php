@@ -29,6 +29,7 @@
       <input type="hidden" name="action" value="editEntry">
       <input type="submit" name="" value="Modificar">
     </form>
+    <a href="search.php?action=deleteEntry&deleted=tue&id=<?php echo $entry["id"]; ?>">Eliminar</a>
   <?php include ("footer.php"); ?>
   </body>
 </html>

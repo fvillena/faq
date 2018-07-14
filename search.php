@@ -10,6 +10,9 @@ header('Content-Type: text/html, charset=utf-8');
   </head>
   <body>
     <?php include ("header.php"); ?>
+    <?php if (isset($_GET["deleted"])) {
+      echo 'entrada eliminada correctamente';
+    } ?>
     <form class="" action="search.php" method="GET">
       <input type="text" name="q" value='<?php if (isset($_GET["q"])) {echo $_GET["q"];} ?>'>
       <input type="submit" name="" value="Buscar">
