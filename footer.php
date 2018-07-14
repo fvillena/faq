@@ -8,4 +8,5 @@ Desarrollado con <i class="fas fa-heart"></i> y <i class="fas fa-coffee"></i> po
   gtag('js', new Date());
 
   gtag('config', 'UA-50179084-1');
+  <?php if (isset($_SESSION["user_id"])) { echo "gtag('set', {'user_id': '".$_SESSION["user_id"]."'});";} ?>
 </script>
