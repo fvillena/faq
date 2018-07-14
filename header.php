@@ -5,12 +5,17 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
 
+<script src="//cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+<!-- <link rel="stylesheet" href="//cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css"> -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.bootstrap4.min.css">
+
 <ul class="nav nav-tabs">
   <li class="nav-item">
     <a class="nav-link <?php if ($filename == "index") {  echo 'active';} ?>" href="index.php">Inicio</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link <?php if ($filename == "search") {  echo 'active';} ?>" href="search.php">Buscador</a>
+    <a class="nav-link <?php if ($filename == "search") {  echo 'active';} ?>" href="search.php?q=">Buscador</a>
   </li>
   <li class="nav-item">
     <?php if (isset($_SESSION['user']) && ($_SESSION['user_type'] == 1)) {echo '<a class="nav-link ';if ($filename == "add") {  echo 'active';}echo '"  href="add.php">Añadir Entrada</a>';} ?>
