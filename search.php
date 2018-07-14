@@ -1,3 +1,4 @@
+<?php $filename = basename(__FILE__, '.php'); ?>
 <?php
 include ("controller.php");
 header('Content-Type: text/html, charset=utf-8');
@@ -8,7 +9,7 @@ header('Content-Type: text/html, charset=utf-8');
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Búsqueda</title>
   </head>
-  <body>
+  <body class="container">
     <?php include ("header.php"); ?>
     <?php if (isset($_GET["deleted"])) {
       echo 'entrada eliminada correctamente';

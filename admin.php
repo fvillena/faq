@@ -1,4 +1,5 @@
 <?php include ("controller.php"); ?>
+<?php $filename = basename(__FILE__, '.php'); ?>
 <?php commentsToArray() ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -6,7 +7,7 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body class="container">
     <?php include ("header.php"); ?>
     <?php if (!isset($_SESSION['user']) || ($_SESSION['user_type'] != 1)) {header('Location: index.php');} ?>
     <h1>Panel de Control</h1>

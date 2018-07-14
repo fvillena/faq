@@ -1,3 +1,4 @@
+<?php $filename = basename(__FILE__, '.php'); ?>
 <?php
 include ("controller.php");
 header('Content-Type: text/html, charset=utf-8');
@@ -8,7 +9,7 @@ header('Content-Type: text/html, charset=utf-8');
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <title>Inicio</title>
   </head>
-  <body>
+  <body class="container">
     <?php include ("header.php"); ?>
     <h1>Bienvenido <?php if (isset($_SESSION["user"])) {echo $_SESSION["user_name"];} ?></h1>
     <!-- <table border="1">

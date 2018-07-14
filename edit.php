@@ -1,11 +1,12 @@
 <?php include ("controller.php") ?>
+<?php $filename = basename(__FILE__, '.php'); ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title><?php echo $entry["procedimientoExamen"]; ?></title>
   </head>
-  <body>
+  <body class="container">
     <?php include ("header.php"); ?>
     <?php if (!isset($_SESSION['user']) || ($_SESSION['user_type'] != 1)) {header('Location: index.php');} ?>
     <?php if (isset ($_GET["modified"]) && $_GET["modified"] == "true") {

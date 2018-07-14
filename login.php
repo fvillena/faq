@@ -1,3 +1,4 @@
+<?php $filename = basename(__FILE__, '.php'); ?>
 <?php include ("header.php") ?>
 <?php include ("controller.php") ?>
 <?php
@@ -52,7 +53,7 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body class="container">
     <form method="POST" action="login.php">
             <label for="user">E-mail:</label>
             <input type="email" name="user">

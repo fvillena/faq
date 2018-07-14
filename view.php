@@ -1,11 +1,12 @@
 <?php include ("controller.php"); ?>
+<?php $filename = basename(__FILE__, '.php'); ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
     <title><?php echo $entry["procedimientoExamen"]; ?></title>
   </head>
-  <body>
+  <body class="container">
     <?php include ("header.php"); ?>
     <h1><?php echo $entry["procedimientoExamen"]; ?></h1>
     <h2>Servicio</h2>

@@ -1,3 +1,4 @@
+<?php $filename = basename(__FILE__, '.php'); ?>
 <?php include ("controller.php"); ?>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -5,7 +6,7 @@
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
+  <body class="container">
     <?php include ("header.php"); ?>
     <h1>Mi Cuenta</h1>
     <p>Correo Electrónico: <?php echo $_SESSION["user"] ?></p>
