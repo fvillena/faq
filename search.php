@@ -12,6 +12,26 @@
     .dataTables_wrapper .mylength .dataTables_length {
         float: right
     }
+    @import url(https://fonts.googleapis.com/css?family=Droid+Sans);
+.loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: rgba(255,255,255,0.9);
+}
+.center {
+    position: absolute;
+    width: 100px;
+    height: 50px;
+    top: 50%;
+    left: 50%;
+    margin-left: -50px; /* margin is -0.5 * dimension */
+    margin-top: -25px;
+}​
+
 </style>
 <!DOCTYPE html>
 <html lang="es" dir="ltr">
@@ -22,6 +42,9 @@
 </head>
 
 <body class="container">
+  <div class="loader">
+    <div class="center"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+  </div>
     <?php include ( "header.php"); ?>
     <?php if (isset($_GET[ "deleted"])) { echo 'entrada eliminada correctamente'; } ?>
     <form class="" action="search.php" method="GET">
@@ -126,6 +149,9 @@
         $('#searchBox').on('keyup', function() {
             table.search(jQuery.fn.DataTable.ext.type.search.string(this.value)).draw();
         });
+    });
+    $(window).on('load', function(){
+      $('.loader').fadeOut();
     });
 </script>
 
