@@ -11,40 +11,39 @@ header('Content-Type: text/html, charset=utf-8');
   </head>
   <body class="container">
     <?php include ("header.php"); ?>
+    <?php $entry =getEntry($connection);?>
     <h1>Bienvenido <?php if (isset($_SESSION["user"])) {echo $_SESSION["user_name"];} ?></h1>
-    <!-- <table border="1">
+    <h2>Entrada al Azar</h2>
+    <table class="display table table-responsive">
       <thead>
-        <th>Procemimiento / Examen</th>
+        <th>Procedimiento / Examen</th>
         <th>Servicio</th>
         <th>Ubicación</th>
         <th>Toma de Hora</th>
         <th>observaciones</th>
       </thead>
+      <tr>
+        <td><?php echo $entry["procedimientoExamen"]; ?></td>
+        <td><?php echo $entry["servicio"]; ?></td>
+        <td><?php echo $entry["ubicacion"]; ?></td>
+        <td><?php echo $entry["tomaHora"]; ?></td>
+        <td><?php echo $entry["observaciones"]; ?></td>
+      </tr>
+    </table>
+    <h2>Noticias del Hospital</h2>
     <?php
-    // $data = listAll($connection);
-    // foreach ($data as $key) {
-    //   echo '
-    //   <tr>
-    //     <td>
-    //       '.$key["procedimientoExamen"].'
-    //     </td>
-    //     <td>
-    //       '.$key["servicio"].'
-    //     </td>
-    //     <td>
-    //       '.$key["ubicacion"].'
-    //     </td>
-    //     <td>
-    //       '.$key["tomaHora"].'
-    //     </td>
-    //     <td>
-    //       '.$key["observaciones"].'
-    //     </td>
-    //   </tr>
-    //   ';
-    // }
-    ?>
-  </table> -->
+
+    $x = getFeed("https://twitrss.me/twitter_user_to_rss/?user=redclinica");
+
+    $i = 1;
+    foreach($x->channel->item as $entry) {
+        echo "<p>" . $entry->description . "</p>";
+        if($i == 2) break;
+        $i++;
+    }
+
+     ?>
+
   <?php include ("footer.php"); ?>
   </body>
 </html>

@@ -58,4 +58,9 @@ function deleteEntry ($id,$connection) {
 	$query = "DELETE FROM `procedimientos` WHERE `id` = ".$id."";
 	$result = $connection->query($query);
 }
+function randomEntry ($connection) {
+	$query = "SELECT * FROM procedimientos order by RAND() LIMIT 1";
+	$result = $connection->query($query);
+	return $result;
+}
  ?>

@@ -5,6 +5,20 @@ include ("credentials.php");
 
 $connection = connectMySQL($server,$user,$password,$db);
 
+
+function getFeed($feed_url) {
+
+    $content = file_get_contents($feed_url);
+    $x = new SimpleXmlElement($content);
+    return $x;
+}
+
+function getEntry ($connection) {
+  $result = randomEntry($connection);
+  $entry = $result->fetch_assoc();
+  return $entry;
+}
+
 function listAll($connection) {
   $result = selectEntries($connection);
   $data = array();
