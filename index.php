@@ -13,8 +13,17 @@ header('Content-Type: text/html, charset=utf-8');
     <?php include ("header.php"); ?>
     <?php $entry =getEntry($connection);?>
     <h1>Bienvenido <?php if (isset($_SESSION["user"])) {echo $_SESSION["user_name"];} ?></h1>
-    <h2>Entrada al Azar</h2>
-    <table class="display table table-responsive">
+    <hr>
+    <br>
+    <font color="AAAAAA"><h2>¿Sabías Que?</h2></font>
+
+    <blockquote class="blockquote">
+  <p class="mb-0"><?php echo $entry["procedimientoExamen"]; ?> se realiza en <?php echo $entry["ubicacion"]; ?> y la toma de hora se realiza en <?php echo $entry["tomaHora"]; ?></p>
+</blockquote>
+
+<br>
+    <hr>
+    <!-- <table class="display table table-responsive">
       <thead>
         <th>Procedimiento / Examen</th>
         <th>Servicio</th>
@@ -29,7 +38,7 @@ header('Content-Type: text/html, charset=utf-8');
         <td><?php echo $entry["tomaHora"]; ?></td>
         <td><?php echo $entry["observaciones"]; ?></td>
       </tr>
-    </table>
+    </table> -->
     <h2>Noticias del Hospital</h2>
     <?php
 
