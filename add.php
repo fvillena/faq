@@ -4,7 +4,7 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Añadir Entrada</title>
   </head>
   <body class="container">
     <?php include ("header.php"); ?>
