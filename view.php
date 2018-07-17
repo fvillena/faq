@@ -8,17 +8,38 @@
   </head>
   <body class="container">
     <?php include ("header.php"); ?>
-    <h1><?php echo $entry["procedimientoExamen"]; ?></h1>
-    <h2>Servicio</h2>
-    <?php echo $entry["servicio"]; ?>
-    <h2>Ubicación</h2>
-    <?php echo $entry["ubicacion"]; ?>
-    <h2>Toma de Hora</h2>
-    <?php echo $entry["tomaHora"]; ?>
-    <h2>Observaciones</h2>
-    <?php echo $entry["observaciones"]; ?>
-    <h2>Estado</h2>
-    <?php echo $entry["state"]; ?>
+    
+    <h1 class="display-4"><?php echo $entry["procedimientoExamen"]; ?></h1>
+    
+    <br>
+    <hr>
+
+ <div class="container">
+   <div class="row">
+      <div class="col">
+         <p>Servicio</p>
+         <h2><?php echo $entry["servicio"]; ?></h2>
+      </div>
+      <div class="col">
+         <p>Ubicación</p>
+         <h2><?php echo $entry["ubicacion"]; ?></h2>
+      </div>
+   </div>
+   <br>
+   <div class="row">
+      <div class="col">
+         <p>Toma de Hora</p>
+         <h2><?php echo $entry["tomaHora"]; ?></h2>
+      </div>
+      <div class="col">
+         <p>Observaciones</p>
+         <h2><?php echo $entry["observaciones"]; ?></h2>
+      </div>
+   </div>
+</div>
+    <br>
+    <hr>
+    
     <h2>Comentarios</h2>
     <ul>
     <?php if ($comments == false) {
