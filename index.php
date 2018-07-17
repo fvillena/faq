@@ -12,7 +12,7 @@ header('Content-Type: text/html, charset=utf-8');
   <body class="container">
     <?php include ("header.php"); ?>
     <?php $entry =getEntry($connection);?>
-    <h1>Bienvenido <?php if (isset($_SESSION["user"])) {echo $_SESSION["user_name"];} ?></h1>
+    <h1>Hola monos <?php if (isset($_SESSION["user"])) {echo $_SESSION["user_name"];} ?></h1>
     <hr>
     <br>
     <font color="AAAAAA"><h2>¿Sabías Que?</h2></font>
