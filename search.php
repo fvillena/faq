@@ -56,7 +56,7 @@
         <?php $data=searchResults($connection, "");
         echo '
           <thead>
-            <th>Procemimiento / Examen</th>
+            <th>Procedimiento / Examen</th>
             <th>Servicio</th>
             <th>Ubicación</th>
             <th>Toma de Hora</th>
