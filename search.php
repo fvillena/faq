@@ -48,9 +48,8 @@
     <?php include ( "header.php"); ?>
     <?php if (isset($_GET[ "deleted"])) { echo 'entrada eliminada correctamente'; } ?>
     <form class="" action="search.php" method="GET">
-        <label for="">Buscar: </label>
-        <input type="text" id="" name="dtq" placeholder="Ingrese Búsqueda" value='<?php if ($dtq != "") { echo $dtq;}?>'>
-        <input type="submit" name="" value="Buscar">
+        <input class="form-control form-control-lg" type="text" id="" name="dtq" placeholder="Ingrese Búsqueda" value='<?php if ($dtq != "") { echo $dtq;}?>'><br>
+        <input class="btn btn-primary btn-lg" type="submit" name="" value="Buscar">
     </form>
     <table id=searchResults class="display table table-responsive">
         <?php $data=searchResults($connection, "");
