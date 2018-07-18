@@ -8,10 +8,10 @@
   </head>
   <body class="container">
     <?php include ("header.php"); ?>
-    
+
     <h1 class="display-4"><?php echo $entry["procedimientoExamen"]; ?></h1>
-    
-    <br>
+
+    <?php if (isset($_SESSION['user']) && ($_SESSION['user_type'] == 1)) {echo '<p><a href="edit.php?action=editEntry&id='.$entry["id"].'"><button class="btn btn-primary">Editar</button></a></p>';} else {echo'<br>';}?>
     <hr>
 
  <div class="container">
@@ -39,7 +39,7 @@
 </div>
     <br>
     <hr>
-    
+
     <h2>Comentarios</h2>
     <ul>
     <?php if ($comments == false) {
@@ -61,7 +61,6 @@
         <input type="submit" name="" value="Comentar">
       </form>
       ';} ?>
-      <?php if (isset($_SESSION['user']) && ($_SESSION['user_type'] == 1)) {echo '<p><a href="edit.php?action=editEntry&id='.$entry["id"].'">Editar</a></p>';} ?>
     <?php include ("footer.php"); ?>
   </body>
 </html>
