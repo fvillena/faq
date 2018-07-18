@@ -4,28 +4,17 @@
 <html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title></title>
+    <title>Registrar Nuevo Usuario</title>
   </head>
   <body class="container">
     <?php include ("header.php") ?>
     <?php if (!isset($_SESSION['user']) || ($_SESSION['user_type'] != 1)) {header('Location: index.php');} ?>
     <?php if (isset($_POST["userAdded"])) {
-      echo 'usuario '.$_POST["user"].' creado';
+      echo '<div class="alert alert-success" role="alert">
+      Usuario '.$_POST["user"].' Creado Correctamente
+      </div>';
     } ?>
-    <!-- <form class="" action="register.php" method="POST">
-      <label for="">Nombre</label>
-      <input type="text" name="name" value=""><br>
-      <label for="">Contraseña: </label>
-      <input type="password" name="password" value=""><br>
-      <label for="">Tipo de Usuario: </label>
-      <select class="" name="type">
-        <option value="1">Administrador</option>
-        <option value="2">Ejecutiva</option>
-      </select><br>
-      <input type="hidden" name="action" value="addUser">
-      <input type="hidden" name="userAdded" value="true">
-      <input type="submit" name="" value="Agregar">
-    </form> -->
+
     <form class="" action="register.php" method="POST">
   <div class="form-group">
     <label for="exampleInputEmail1">Correo Electrónico</label>
