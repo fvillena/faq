@@ -14,10 +14,12 @@
 
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link <?php if ($filename == "index") {  echo 'active';} ?>" href="index.php">Inicio</a>
+    <!-- <a class="nav-link <?php if ($filename == "index") {  echo 'active';} ?>" href="index.php">Inicio</a> -->
+    <?php if (isset($_SESSION['user'])) {echo '<a class="nav-link ';if ($filename == "index") {  echo 'active';}echo '"  href="index.php">Inicio</a>';} ?>
   </li>
   <li class="nav-item">
-    <a class="nav-link <?php if ($filename == "search") {  echo 'active';} ?>" href="search.php?q=">Buscador</a>
+    <!-- <a class="nav-link <?php if ($filename == "search") {  echo 'active';} ?>" href="search.php?q=">Buscador</a> -->
+    <?php if (isset($_SESSION['user'])) {echo '<a class="nav-link ';if ($filename == "search") {  echo 'active';}echo '"  href="search.php">Buscador</a>';} ?>
   </li>
   <li class="nav-item">
     <?php if (isset($_SESSION['user']) && ($_SESSION['user_type'] == 1)) {echo '<a class="nav-link ';if ($filename == "add") {  echo 'active';}echo '"  href="add.php">Añadir Entrada</a>';} ?>

@@ -11,6 +11,7 @@ header('Content-Type: text/html, charset=utf-8');
   </head>
   <body class="container">
     <?php include ("header.php"); ?>
+    <?php if (!isset($_SESSION['user'])) {header('Location: login.php');} ?>
     <?php $entry =getEntry($connection);?>
     <h1>Bienvenido <?php if (isset($_SESSION["user"])) {echo $_SESSION["user_name"];} ?></h1>
     <hr>

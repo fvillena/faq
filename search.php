@@ -46,6 +46,7 @@
     <div class="center"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
   </div>
     <?php include ( "header.php"); ?>
+    <?php if (!isset($_SESSION['user'])) {header('Location: login.php');} ?>
     <?php if (isset($_GET[ "deleted"])) { echo 'entrada eliminada correctamente'; } ?>
     <form class="" action="search.php" method="GET">
         <input class="form-control form-control-lg" type="text" id="" name="dtq" placeholder="Ingrese Búsqueda" value='<?php if ($dtq != "") { echo $dtq;}?>'><br>
